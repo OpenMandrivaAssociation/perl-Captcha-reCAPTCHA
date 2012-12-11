@@ -1,21 +1,21 @@
 %define upstream_name    Captcha-reCAPTCHA
 %define upstream_version 0.94
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    A Perl implementation of the reCAPTCHA API
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Captcha/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	A Perl implementation of the reCAPTCHA API
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Captcha/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(HTML::Tiny)
-BuildRequires: perl(LWP::UserAgent)
-BuildRequires: perl(Test::More)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(HTML::Tiny)
+BuildRequires:	perl(LWP::UserAgent)
+BuildRequires:	perl(Test::More)
+BuildArch:	noarch
 
 %description
 reCAPTCHA is a hybrid mechanical turk and captcha that allows visitors who
@@ -34,24 +34,33 @@ From the http://recaptcha.net/learnmore.html manpage:
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 0.940.0-2mdv2011.0
++ Revision: 658736
+- rebuild for updated spec-helper
+
+* Wed Jul 14 2010 Jérôme Quelin <jquelin@mandriva.org> 0.940.0-1mdv2011.0
++ Revision: 553063
+- update to 0.94
+
+* Sun Nov 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.920.0-1mdv2010.1
++ Revision: 471170
+- import perl-Captcha-reCAPTCHA
 
 
+* Sun Nov 29 2009 cpan2dist 0.92-1mdv
+- initial mdv release, generated with cpan2dist
