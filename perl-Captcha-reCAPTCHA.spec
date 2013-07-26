@@ -1,15 +1,15 @@
 %define upstream_name    Captcha-reCAPTCHA
-%define upstream_version 0.94
+%define upstream_version 0.97
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%perl_convert_version 0.97
+Release:	1
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Captcha/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Captcha/Captcha-reCAPTCHA-0.97.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(HTML::Tiny)
@@ -64,3 +64,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sun Nov 29 2009 cpan2dist 0.92-1mdv
 - initial mdv release, generated with cpan2dist
+
