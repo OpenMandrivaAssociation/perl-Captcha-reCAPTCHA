@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 0.97
-Release:	2
+Release:	3
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
