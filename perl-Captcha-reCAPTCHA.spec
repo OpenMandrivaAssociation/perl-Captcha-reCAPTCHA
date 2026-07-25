@@ -2,13 +2,13 @@
 %define upstream_version 0.97
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.97
-Release:	3
+Version:	%{upstream_version}
+Release:	4
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
+Url:		https://metacpan.org/dist/Captcha-reCAPTCHA
 Source0:	http://www.cpan.org/modules/by-module/Captcha/Captcha-reCAPTCHA-0.97.tar.gz
 
 BuildRequires:	make
