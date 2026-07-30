@@ -1,13 +1,14 @@
 %define upstream_name    Captcha-reCAPTCHA
+%define upstream_version 0.99
 Name:		perl-%{upstream_name}
-Version:	0.97
-Release:	5
+Version:	0.99
+Release:	1
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Captcha-reCAPTCHA
-Source0:	http://www.cpan.org/modules/by-module/Captcha/Captcha-reCAPTCHA-0.97.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SU/SUNNYP/Captcha-reCaptcha-0.99.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -46,21 +47,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Mon Apr 25 2011 Funda Wang <fwang@mandriva.org> 0.940.0-2mdv2011.0
-+ Revision: 658736
-- rebuild for updated spec-helper
-
-* Wed Jul 14 2010 Jérôme Quelin <jquelin@mandriva.org> 0.940.0-1mdv2011.0
-+ Revision: 553063
-- update to 0.94
-
-* Sun Nov 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.920.0-1mdv2010.1
-+ Revision: 471170
-- import perl-Captcha-reCAPTCHA
-
-
-* Sun Nov 29 2009 cpan2dist 0.92-1mdv
-- initial mdv release, generated with cpan2dist
 
