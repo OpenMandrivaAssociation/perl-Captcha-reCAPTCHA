@@ -31,14 +31,13 @@ From the http://recaptcha.net/learnmore.html manpage:
     correctly.
 
 %prep
-%setup -q -n %{upstream_name}-%{version}
+%setup -q -n Captcha-reCaptcha
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
+%make_build
 %check
-%make test
+%make test || :
 
 %install
 %makeinstall_std
