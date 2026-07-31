@@ -2,7 +2,7 @@
 %define upstream_version 0.98
 Name:		perl-%{upstream_name}
 Version:	0.98
-Release:	7
+Release:	8
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
