@@ -2,7 +2,7 @@
 %define upstream_version 0.98
 Name:		perl-%{upstream_name}
 Version:	0.98
-Release:	3
+Release:	4
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
@@ -31,7 +31,7 @@ From the http://recaptcha.net/learnmore.html manpage:
     correctly.
 
 %prep
-%setup -q -n .
+%setup -q -n Captcha-reCaptcha
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
