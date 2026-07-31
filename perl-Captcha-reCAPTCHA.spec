@@ -1,14 +1,14 @@
 %define upstream_name    Captcha-reCAPTCHA
-%define upstream_version 0.99
+%define upstream_version 0.98
 Name:		perl-%{upstream_name}
-Version:	0.99
-Release:	1
+Version:	0.98
+Release:	2
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Captcha-reCAPTCHA
-Source0:	https://cpan.metacpan.org/authors/id/S/SU/SUNNYP/Captcha-reCaptcha-0.99.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/S/SU/SUNNYP/Captcha-reCAPTCHA-0.98.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -31,7 +31,7 @@ From the http://recaptcha.net/learnmore.html manpage:
     correctly.
 
 %prep
-%setup -q -n Captcha-reCaptcha
+%setup -q -n .
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
