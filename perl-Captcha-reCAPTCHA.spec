@@ -2,7 +2,7 @@
 %define upstream_version 0.98
 Name:		perl-%{upstream_name}
 Version:	0.98
-Release:	4
+Release:	5
 
 Summary:	A Perl implementation of the reCAPTCHA API
 License:	GPL+ or Artistic
@@ -32,18 +32,27 @@ From the http://recaptcha.net/learnmore.html manpage:
 
 %prep
 %setup -q -n Captcha-reCaptcha
+# strip macOS AppleDouble junk shipped in the CPAN tarball
+find . -name '._*' -delete
+find . -name '.DS_Store' -delete
+
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
 %make_build
 %check
 make test || :
+
 %make test || :
 
 %install
 %makeinstall_std
 
 %files
+%doc Changes META.yml README TODO
+%{perl_vendorlib}/Captcha
+%{_mandir}/man3/*
+
 %doc Changes META.yml README TODO
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
